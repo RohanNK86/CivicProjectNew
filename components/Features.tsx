@@ -1,36 +1,36 @@
 import React from 'react';
-import { Camera, Brain, MapPin, Bell, BarChart3, Users } from 'lucide-react';
+import { Camera, Brain, Map, Bell, Shield, BarChart2 } from 'lucide-react';
 
 const features = [
   {
     icon: Camera,
-    title: "Instant Capture",
-    description: "Snap a photo of the issue directly from your phone. Our system automatically geo-tags the location."
+    title: "Photo & Location Capture",
+    description: "Snap a photo and let GPS automatically tag the exact location. No forms, no hassle."
   },
   {
     icon: Brain,
-    title: "AI Categorization",
-    description: "Our advanced AI identifies the problem type and severity instantly, routing it to the right department."
+    title: "AI-Powered Categorization",
+    description: "Our smart system automatically categorizes your report and routes it to the right department."
   },
   {
-    icon: MapPin,
-    title: "Live Tracking",
-    description: "Watch your report's progress on a real-time map. Get estimated completion times."
+    icon: Map,
+    title: "Real-Time Issue Map",
+    description: "See active issues in your neighborhood and track community progress on a live map."
   },
   {
     icon: Bell,
-    title: "Status Updates",
-    description: "Receive notifications via SMS or email when your report is received, processed, and resolved."
+    title: "Status Notifications",
+    description: "Get instant updates when your issue is acknowledged, in progress, or resolved."
   },
   {
-    icon: BarChart3,
-    title: "Transparent Data",
-    description: "Access public dashboards showing community improvements and city responsiveness stats."
+    icon: Shield,
+    title: "Secure & Anonymous",
+    description: "Report sensitive issues anonymously while keeping your personal data protected."
   },
   {
-    icon: Users,
-    title: "Community Driven",
-    description: "See what others are reporting nearby and upvote issues to increase priority."
+    icon: BarChart2,
+    title: "Government Analytics",
+    description: "City officials get powerful dashboards to prioritize resources and improve response times."
   }
 ];
 
@@ -39,27 +39,30 @@ export const Features: React.FC = () => {
     <section id="features" className="py-24 bg-civic-cream">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-civic-navy mb-4">
-            Smart features for a better community
+          <span className="text-civic-teal font-bold tracking-widest text-xs uppercase mb-3 block">Features</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-civic-navy mb-6">
+            Everything You Need to Make a Difference
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            We use cutting-edge technology to make civic engagement simple, transparent, and effective.
+            From reporting to resolution, CivicCare streamlines the entire civic engagement process.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow group"
+              className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col md:flex-row gap-6 items-start"
             >
-              <div className="h-12 w-12 bg-teal-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-civic-teal transition-colors duration-300">
-                <feature.icon className="h-6 w-6 text-civic-teal group-hover:text-white transition-colors duration-300" />
+              <div className="w-14 h-14 bg-civic-teal rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                <feature.icon className="h-7 w-7 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-civic-navy mb-3">{feature.title}</h3>
-              <p className="text-slate-600 leading-relaxed">
-                {feature.description}
-              </p>
+              <div>
+                <h3 className="text-xl font-bold text-civic-navy mb-3">{feature.title}</h3>
+                <p className="text-slate-600 leading-relaxed text-base">
+                  {feature.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
