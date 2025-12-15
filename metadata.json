@@ -1,0 +1,9 @@
+{
+  "name": "CivicCare",
+  "description": "A modern civic tech platform for reporting local issues with AI-powered categorization.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
